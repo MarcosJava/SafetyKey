@@ -36,23 +36,36 @@ class HomeViewController: UIViewController {
     }
     
     override func viewDidAppear(animated: Bool) {
-        let fbLoginManager : FBSDKLoginManager = FBSDKLoginManager()
-        let permissions = ["public_profile", "email", "user_friends"]
-        fbLoginManager.logInWithReadPermissions(permissions, handler: { (result, error) -> Void in
+        
+        
+//        if FBSDKAccessToken.currentAccessToken().userID == nil{
+//
+//        } else {
+//            print(FBSDKAccessToken.currentAccessToken().userID)
+//        }
+        
+        if((FBSDKAccessToken.currentAccessToken()) == nil){ //PEDE PERMISSAO NOVAMENTE, PQ NAO ESTAMOS SALVANDO O USER AINDA
             
-            if (error == nil){
+            let fbLoginManager : FBSDKLoginManager = FBSDKLoginManager()
+            let permissions = ["public_profile", "email"]
+            
+            
+            
+            fbLoginManager.logInWithReadPermissions(permissions, handler: { (result, error) -> Void in
+            
+                if (error == nil){
                 
-                let fbloginresult : FBSDKLoginManagerLoginResult = result
-                
-                if(fbloginresult.grantedPermissions.contains("email"))
-                {
-                    if((FBSDKAccessToken.currentAccessToken()) != nil){
+                //let fbloginresult : FBSDKLoginManagerLoginResult = result
+                //if(fbloginresult.grantedPermissions.contains("id")){
+
+                        if((FBSDKAccessToken.currentAccessToken()) != nil){
                         
-                        self.getData()
-                    }
+                            self.getData()
+                        }
                 }
-            }
-        })
+                //}
+            })
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -72,7 +85,7 @@ class HomeViewController: UIViewController {
 //    }
     
     func getData(){
-        if((FBSDKAccessToken.currentAccessToken()) != nil){
+       
             
             FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "id, name, gender, email"]).startWithCompletionHandler({ (connection, result, error) -> Void in
                 
@@ -80,7 +93,13 @@ class HomeViewController: UIViewController {
                     print(result)
                     
                     self.nameUser.text = (result["name"] as! String)
-                    self.emailUser.text = (result.valueForKey("email") as! String)
+                    
+                    if let email = result["email"] {
+                        //self.emailUser.text = email as! String
+                    } else {
+                        self.emailUser.text = "Não tem email"
+                    }
+                    
                     self.genderUser.text = (result["gender"] as! String)
                     
                     //recupera o ID do facebook do usuario
@@ -97,7 +116,7 @@ class HomeViewController: UIViewController {
                     
                 }
             })
-        }
+        
 
     }
     

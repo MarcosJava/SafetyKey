@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class ViewController: UIViewController {
     
@@ -16,6 +17,7 @@ class ViewController: UIViewController {
      */
     
     var facebook = FacebookUtil()
+    var isLogged = false;
     
     
     
@@ -39,33 +41,37 @@ class ViewController: UIViewController {
     @IBAction func signInFacebook(sender: AnyObject) {
         
         let fbLoginManager : FBSDKLoginManager = FBSDKLoginManager()
-        let permissions = ["public_profile", "email", "user_friends"]
+        let permissions = ["public_profile", "email"]
         
         
         fbLoginManager.logInWithReadPermissions(permissions, handler: { (result, error) -> Void in
             
             if (error == nil){
                 
-                if let fbloginresult : FBSDKLoginManagerLoginResult = result {
+                //if let fbloginresult : FBSDKLoginManagerLoginResult = result {
                     
-                    if(fbloginresult.grantedPermissions.contains("email")) {
+                    //if(fbloginresult.grantedPermissions.contains("email")) {
                         
                         if((FBSDKAccessToken.currentAccessToken()) != nil){
                             
                             //self.returnUserData()
                             self.performSegueWithIdentifier("forHome", sender: self)
+                            self.isLogged = true
                         }
-                        //fbLoginManager.logOut()
+                        fbLoginManager.logOut()
                        // self.performSegueWithIdentifier("forHome", sender: self)
-                    }
-                }
+                    //}
+               // }
             }
         })
         
+    }
+    
+    override func viewDidAppear(animated: Bool) {
         
-
-        
-        
+        if isLogged == true {
+            self.performSegueWithIdentifier("forHome", sender: self)
+        }
     }
     
     
@@ -75,6 +81,10 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
+        if (FBSDKAccessToken.currentAccessToken() != nil) {
+            print("Tem a permissao")
+            self.isLogged = true
+        }
         if facebook.hasUserLogged() == true {
             self.performSegueWithIdentifier("forHome", sender: self)
         }
@@ -85,7 +95,7 @@ class ViewController: UIViewController {
         
     }
     
-   
+
     
 
     override func didReceiveMemoryWarning() {
