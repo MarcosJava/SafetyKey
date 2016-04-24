@@ -6,19 +6,21 @@
 //  Copyright © 2016 LeoMarcos. All rights reserved.
 //
 
-import CoreData
 import UIKit
 
 class User: NSObject {
     
-    var name : NSString?
-    var gender : NSString?
-    var email : NSString?
-    var password : NSString?
+    var id: NSNumber?
+    var idFacebook: String?
+    var name : String?
+    var gender : String?
+    var email : String?
+    var password : String?
     var photo : UIImage?
     
+    
     override var description:String {
-        return "name: \(name) gender:\(gender) email:\(email) password:\(password) photo:\(photo)"
+        return "id: \(id) idFacebook: \(idFacebook) name: \(name) gender:\(gender) email:\(email) password:\(password) photo:\(photo)"
     }
   
     

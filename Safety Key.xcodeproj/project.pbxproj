@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		18545D7E1CA387F80010CE60 /* FormSenhasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18545D7D1CA387F80010CE60 /* FormSenhasViewController.swift */; };
+		18A983381C9BB74400DFADF0 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A983371C9BB74400DFADF0 /* TableViewController.swift */; };
+		18A9833A1C9BBAA900DFADF0 /* SenhaCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A983391C9BBAA900DFADF0 /* SenhaCell.swift */; };
 		18AAB4451C815BD9004BDC10 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18AAB4441C815BD9004BDC10 /* AppDelegate.swift */; };
 		18AAB4471C815BD9004BDC10 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18AAB4461C815BD9004BDC10 /* ViewController.swift */; };
 		18AAB44A1C815BDA004BDC10 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18AAB4481C815BDA004BDC10 /* Main.storyboard */; };
@@ -24,7 +27,8 @@
 		18AAB4841C822DE2004BDC10 /* icon.ico in Resources */ = {isa = PBXBuildFile; fileRef = 18AAB4831C822DE2004BDC10 /* icon.ico */; };
 		18AAB4861C82887B004BDC10 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18AAB4851C82887B004BDC10 /* HomeViewController.swift */; };
 		18AAB4891C82898A004BDC10 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18AAB4881C82898A004BDC10 /* User.swift */; };
-		18AAB48D1C828A30004BDC10 /* FacebookUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18AAB48C1C828A30004BDC10 /* FacebookUtil.swift */; };
+		18B8AE641CA4E47A00D5F8F4 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18B8AE631CA4E47A00D5F8F4 /* CoreData.framework */; };
+		18B90DC21C9E8B5100499AB4 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B90DC11C9E8B5100499AB4 /* Account.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +49,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		18545D7D1CA387F80010CE60 /* FormSenhasViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormSenhasViewController.swift; sourceTree = "<group>"; };
+		18A983371C9BB74400DFADF0 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		18A983391C9BBAA900DFADF0 /* SenhaCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SenhaCell.swift; sourceTree = "<group>"; };
 		18AAB4411C815BD9004BDC10 /* Safety Key.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Safety Key.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		18AAB4441C815BD9004BDC10 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		18AAB4461C815BD9004BDC10 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -69,7 +76,8 @@
 		18AAB4831C822DE2004BDC10 /* icon.ico */ = {isa = PBXFileReference; lastKnownFileType = image.ico; path = icon.ico; sourceTree = "<group>"; };
 		18AAB4851C82887B004BDC10 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeViewController.swift; path = ../HomeViewController.swift; sourceTree = "<group>"; };
 		18AAB4881C82898A004BDC10 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		18AAB48C1C828A30004BDC10 /* FacebookUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebookUtil.swift; sourceTree = "<group>"; };
+		18B8AE631CA4E47A00D5F8F4 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		18B90DC11C9E8B5100499AB4 /* Account.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +85,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18B8AE641CA4E47A00D5F8F4 /* CoreData.framework in Frameworks */,
 				18AAB4791C815CE3004BDC10 /* FBSDKLoginKit.framework in Frameworks */,
 				18AAB4781C815CE3004BDC10 /* FBSDKCoreKit.framework in Frameworks */,
 				18AAB47A1C815CE3004BDC10 /* FBSDKShareKit.framework in Frameworks */,
@@ -103,6 +112,7 @@
 		18AAB4381C815BD9004BDC10 = {
 			isa = PBXGroup;
 			children = (
+				18B8AE631CA4E47A00D5F8F4 /* CoreData.framework */,
 				18AAB4751C815CE3004BDC10 /* FBSDKCoreKit.framework */,
 				18AAB4761C815CE3004BDC10 /* FBSDKLoginKit.framework */,
 				18AAB4771C815CE3004BDC10 /* FBSDKShareKit.framework */,
@@ -126,11 +136,9 @@
 		18AAB4431C815BD9004BDC10 /* Safety Key */ = {
 			isa = PBXGroup;
 			children = (
-				18AAB48B1C828A21004BDC10 /* util */,
 				18AAB48A1C8289F9004BDC10 /* viewControllers */,
 				18AAB4871C828944004BDC10 /* model */,
 				18AAB4441C815BD9004BDC10 /* AppDelegate.swift */,
-				18AAB4481C815BDA004BDC10 /* Main.storyboard */,
 				18AAB44E1C815BDA004BDC10 /* Assets.xcassets */,
 				18AAB4501C815BDA004BDC10 /* LaunchScreen.storyboard */,
 				18AAB4531C815BDA004BDC10 /* Info.plist */,
@@ -173,6 +181,7 @@
 			isa = PBXGroup;
 			children = (
 				18AAB4881C82898A004BDC10 /* User.swift */,
+				18B90DC11C9E8B5100499AB4 /* Account.swift */,
 			);
 			name = model;
 			sourceTree = "<group>";
@@ -180,19 +189,15 @@
 		18AAB48A1C8289F9004BDC10 /* viewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				18AAB4481C815BDA004BDC10 /* Main.storyboard */,
+				18545D7D1CA387F80010CE60 /* FormSenhasViewController.swift */,
 				18AAB47E1C8223DD004BDC10 /* Images */,
 				18AAB4851C82887B004BDC10 /* HomeViewController.swift */,
 				18AAB4461C815BD9004BDC10 /* ViewController.swift */,
+				18A983371C9BB74400DFADF0 /* TableViewController.swift */,
+				18A983391C9BBAA900DFADF0 /* SenhaCell.swift */,
 			);
 			name = viewControllers;
-			sourceTree = "<group>";
-		};
-		18AAB48B1C828A21004BDC10 /* util */ = {
-			isa = PBXGroup;
-			children = (
-				18AAB48C1C828A30004BDC10 /* FacebookUtil.swift */,
-			);
-			name = util;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -337,9 +342,12 @@
 			files = (
 				18AAB4861C82887B004BDC10 /* HomeViewController.swift in Sources */,
 				18AAB47D1C81D864004BDC10 /* Bridging-Header.m in Sources */,
+				18545D7E1CA387F80010CE60 /* FormSenhasViewController.swift in Sources */,
+				18A983381C9BB74400DFADF0 /* TableViewController.swift in Sources */,
 				18AAB4891C82898A004BDC10 /* User.swift in Sources */,
+				18B90DC21C9E8B5100499AB4 /* Account.swift in Sources */,
+				18A9833A1C9BBAA900DFADF0 /* SenhaCell.swift in Sources */,
 				18AAB44D1C815BDA004BDC10 /* Safety_Key.xcdatamodeld in Sources */,
-				18AAB48D1C828A30004BDC10 /* FacebookUtil.swift in Sources */,
 				18AAB4471C815BD9004BDC10 /* ViewController.swift in Sources */,
 				18AAB4451C815BD9004BDC10 /* AppDelegate.swift in Sources */,
 			);
@@ -578,6 +586,7 @@
 				18AAB46E1C815BDB004BDC10 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		18AAB46F1C815BDB004BDC10 /* Build configuration list for PBXNativeTarget "Safety KeyTests" */ = {
 			isa = XCConfigurationList;
@@ -586,6 +595,7 @@
 				18AAB4711C815BDB004BDC10 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		18AAB4721C815BDB004BDC10 /* Build configuration list for PBXNativeTarget "Safety KeyUITests" */ = {
 			isa = XCConfigurationList;
@@ -594,6 +604,7 @@
 				18AAB4741C815BDB004BDC10 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
